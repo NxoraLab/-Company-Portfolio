@@ -40,18 +40,17 @@ export function Navbar() {
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
-          isScrolled 
-            ? 'py-3 bg-[#0f172add] backdrop-blur-xl border-b border-white/5 shadow-lg' 
-            : 'py-5 bg-transparent'
-        }`}
+      <header
+        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${isScrolled
+          ? 'py-3 bg-[#0f172add] backdrop-blur-xl border-b border-white/5 shadow-lg'
+          : 'py-5 bg-transparent'
+          }`}
       >
         <div className="container mx-auto px-6 max-w-[1240px] flex items-center justify-between">
-          
+
           {/* Logo */}
           <a href="#hero" className="flex items-center z-[1001] transition-transform hover:scale-105">
-            <img src="/logo.png" alt="NxoraLab Logo" className="h-[35px] md:h-[42px] w-auto object-contain drop-shadow-[0_0_15px_rgba(37,99,235,0.3)]" />
+            <img src="/logo.png" alt="NxoraLab Logo" className="w-[140px] md:w-[180px] lg:w-[200px] h-auto object-contain drop-shadow-[0_0_15px_rgba(37,99,235,0.3)]" />
           </a>
 
           {/* Desktop Nav */}
@@ -59,16 +58,15 @@ export function Navbar() {
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
-                <a 
+                <a
                   key={link.name}
                   href={link.href}
-                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isActive ? 'text-white' : 'text-[var(--gray)] hover:text-white hover:bg-white/5'
-                  }`}
+                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive ? 'text-white' : 'text-[var(--gray)] hover:text-white hover:bg-white/5'
+                    }`}
                 >
                   {link.name}
                   {isActive && (
-                    <motion.div 
+                    <motion.div
                       layoutId="navIndicator"
                       className="absolute bottom-0 left-[10%] right-[10%] h-[2px] rounded-full bg-[var(--gradient)]"
                       initial={false}
@@ -85,7 +83,7 @@ export function Navbar() {
             <div className="hidden md:block">
               <Button href="#contact" className="!py-2.5 !px-6">Start a Project</Button>
             </div>
-            <button 
+            <button
               className="md:hidden text-white p-1"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -98,7 +96,7 @@ export function Navbar() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}

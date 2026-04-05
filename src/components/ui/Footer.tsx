@@ -12,7 +12,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 lg:col-span-1">
             <a href="#hero" className="inline-block z-[1001] mb-6 transition-transform hover:scale-105">
-              <img src="/logo.png" alt="NxoraLab Logo" className="h-[38px] w-auto object-contain drop-shadow-[0_0_15px_rgba(37,99,235,0.3)]" />
+              <img src="/logo.png" alt="NxoraLab Logo" className="w-[140px] md:w-[160px] h-auto object-contain drop-shadow-[0_0_15px_rgba(37,99,235,0.3)]" />
             </a>
             <p className="text-[var(--gray)] text-sm mt-4 max-w-[280px]">
               Engineering intelligent digital experiences for forward-thinking organizations worldwide.
